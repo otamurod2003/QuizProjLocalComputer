@@ -17,5 +17,14 @@ namespace Quiz.Backend.Controllers
         {
 
         }
+        [HttpGet]
+        public ActionResult<IEnumerable<Question>> Get()
+        {
+            return new Question[]
+            {
+                new Question {Text= "Amir Temur qachon tugilgan"},
+                 new Question {Text= "Facebook kompaniyasi asoschisi kim edi ?  "}
+            };
+        }
     }
 }
