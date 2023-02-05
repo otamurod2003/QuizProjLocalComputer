@@ -7,8 +7,11 @@ import { ApiService } from "./api.service";
     selector: 'question',
 })
 export class QuestionComponent {
-    question = {
-        text: '',
+    question = 
+    {
+        text: 'Uzbekistan poytaxti qayer',
+        correctAnswer:'Tashkent',
+        wrongAnswers: ['Buxara', 'Navoi', 'Samarkand']
     }
     constructor(private apisvc: ApiService){
 
