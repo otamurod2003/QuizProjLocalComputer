@@ -12,7 +12,7 @@ namespace Quiz.Backend.Controllers
     [ApiController]
     public class QuestionController : ControllerBase
     {
-        private readonly QuizContext _context = null;
+        private readonly QuizContext _context;
         public QuestionController(QuizContext context)
         {
             _context = context;
@@ -21,17 +21,14 @@ namespace Quiz.Backend.Controllers
         [HttpPost]
         public void Post([FromBody] Question question)
         {
-            _context.Questions.Add(question);
-            _context.SaveChanges();
+           question.wrongAnswerString =  string.Join(",", question.wrongAnswer1,question.wrongAnswer2,question.wrongAnswer3);
+           _context.Questions.Add(question);
+           _context.SaveChanges();
         }
         [HttpGet]
         public ActionResult<IEnumerable<Question>> Get()
         {
-            return new Question[]
-            {
-                new Question {Text= "Amir Temur qachon tugilgan"},
-                new Question {Text= "Facebook kompaniyasi asoschisi kim?"}
-            };
+            return _context.Questions;
         }
        
     }

@@ -2,17 +2,32 @@
     <mat-card-content>
         <form>
             <mat-form-field class="fullWidth">
-                <input [(ngModel)]="question.text"  name="quiz" placeholder="Savol" matInput>
+                <mat-label>Savol</mat-label>
+                <input [(ngModel)]="question.questionText"  name="questionText" placeholder="Savol" matInput>
             </mat-form-field>
+
             <mat-form-field class="fullWidth">
-                <input [(ngModel)]="question.correctAnswer" class="fullWidth" name="correctAnswer" placeholder="To'g'ri javob" matInput>
+                <mat-label>To'g'ri javob</mat-label>
+                <input [(ngModel)]="question.correctAnswer"  name="correctAnswer" placeholder="To'gri javob" matInput>
             </mat-form-field>
-            <mat-form-field class="fullWidth" *ngFor="let wrongAnswer of question.wrongAnswers; let i=index">
-                <input [ngModel]="wrongAnswer" name="wrongAnswer{{i+1}}" placeholder="Noto'g'ri javob {{i+1}}" matInput>
+
+            <mat-form-field class="fullWidth">
+                <mat-label>Noto'g'ri javob</mat-label>
+                <input [(ngModel)]="question.wrongAnswer1"  name="wrongAnswer1" placeholder="noto'gri javob 1" matInput>
+            </mat-form-field>
+
+            <mat-form-field class="fullWidth">
+                <mat-label>Noto'g'ri javob</mat-label>
+                <input [(ngModel)]="question.wrongAnswer2"  name="wrongAnswer2" placeholder="noto'gri javob 2" matInput>
+            </mat-form-field>
+            
+            <mat-form-field class="fullWidth">
+                <mat-label>Noto'g'ri javob</mat-label>
+                <input [(ngModel)]="question.wrongAnswer3"  name="wrongAnswer3" placeholder="noto'gri javob 3" matInput>
             </mat-form-field>
         </form>
     </mat-card-content>
     <mat-card-actions>
-        <button (click)="Post()" mat-raised-button>Send</button>
+        <button (click)="Post()" mat-raised-button color="primary">Send</button>
     </mat-card-actions>
 </mat-card>

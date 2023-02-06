@@ -27,7 +27,8 @@ namespace Quiz.Backend
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddCors();
-            services.AddDbContext<QuizContext>(options =>  options.UseInMemoryDatabase("Quiz"));
+            services.AddDbContext<QuizContext>(
+                options => options.UseInMemoryDatabase("Quiz"));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
