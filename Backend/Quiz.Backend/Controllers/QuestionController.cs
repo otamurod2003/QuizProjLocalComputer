@@ -30,6 +30,11 @@ namespace Quiz.Backend.Controllers
         {
             return _context.Questions;
         }
-       
+
+        [HttpPut("{id}")]
+        public void Put(int id, [FromBody] Question question)
+        {
+        }
+
     }
 }
